@@ -1,5 +1,3 @@
-
-
 #Cmake defaults
 cmake_minimum_required(VERSION 3.20)
 project(swc VERSION 0.0.1 LANGUAGES C CXX)
@@ -14,4 +12,5 @@ set(CMAKE_CXX_EXTENSIONS False)
 #LLVM package requirements
 find_package(Clang REQUIRED CONFIG)
 add_executable(swc src/main.cpp)
+target_compile_options(swc PRIVATE -Wall -Wextra) # Additional Debugging tools
 target_link_libraries(swc PRIVATE libclang)
